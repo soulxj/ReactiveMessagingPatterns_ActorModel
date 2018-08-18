@@ -4,7 +4,7 @@ version := "1.0"
 
 scalaVersion := "2.11.7"
 
-scalaSource in Compile <<= (baseDirectory in Compile)(_ / "src")
+scalaSource in Compile := (baseDirectory in Compile)(_ / "src").value 
 
 // can't use akka 2.4.x because code use some deprecated classes like EventSourcedProcessor
 lazy val akkaVersion = "2.3.4"
